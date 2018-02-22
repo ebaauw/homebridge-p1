@@ -18,10 +18,10 @@ You need a smart meter that complies to DMSR 5.0.  The companies maintaining the
 You need a cable to connect the smart meter's P1 port to a USB port.  I got mine [here](https://www.sossolutions.nl/slimme-meter-kabel), but you could also make one yourself, as described [here](http://gejanssen.com/howto/Slimme-meter-uitlezen/).  The cable is quite short (~1m) but you can extend it using a regular USB extension cable (female-A to A).
 
 You need a server to run homebridge.  This can be anything running [Node.js](https://nodejs.org): from a Raspberry Pi, a NAS system, or an always-on PC running Linux, macOS, or Windows.  See the [homebridge Wiki](https://github.com/nfarina/homebridge/wiki) for details.  I run homebridge-p1 on a Raspberry Pi 3 model B.  
-I recommend using wired Ethernet to connect the server running homebridge, the Hue bridge, and the AppleTV.
+I recommend using wired Ethernet to connect the server running homebridge and the AppleTV.
 
 ### Installation
-The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.js.  I've followed these steps to set it up on my Raspberry Pi:
+The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.js.  I've followed these steps to set it up:
 - Install the latest v8 LTS version of Node.js.  On a Raspberry Pi, use the 8.x [Debian package](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). On other platforms, download the [8.x.x LTS](https://nodejs.org) installer.  Both installations include the `npm` package manager;
 - On macOS, make sure `/usr/local/bin` is in your `$PATH`, as `node`, `npm`, and, later, `homebridge` install there.  On a Raspberry Pi, these install to `/usr/bin`;
 - You might want to update `npm` through `sudo npm -g update npm@latest`;
