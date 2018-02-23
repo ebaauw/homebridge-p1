@@ -16,13 +16,18 @@
     "slimme-meter"
   ],
   "main": "index.js",
+  "bin": {
+    "serialport-list": "node_modules/serialport/bin/list.js",
+    "serialport-repl": "node_modules/serialport/bin/repl.js",
+    "serialport-term": "node_modules/serialport/bin/terminal.js"
+  },
   "engines": {
     "homebridge": "^0.4.38",
     "node": "^8.9.4"
   },
   "dependencies": {
     "fakegato-history": "^0.4.0",
-    "homebridge-hue-utils": "^0.4.1",
+    "homebridge-hue-utils": "^0.4.3",
     "semver": "^5.4.1",
     "serialport": "^6.0.5"
   },
