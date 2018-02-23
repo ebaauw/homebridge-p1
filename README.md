@@ -5,8 +5,9 @@
 ## Homebridge plugin for DSMR end-consumer (P1) interface.
 Copyright © 2018 Erik Baauw. All rights reserved.
 
-This [homebridge](https://github.com/nfarina/homebridge) plugin exposes a smart meter to Apple's [HomeKit](http://www.apple.com/ios/home/), using the end-consumer (P1) interface of the [Dutch Smart Meter Requirements (DMSR)](https://www.netbeheernederland.nl/_upload/Files/Slimme_meter_15_a727fce1f1.pdf).  It provides the following features:
-- (work in progress)
+This experimental [homebridge](https://github.com/nfarina/homebridge) plugin exposes a smart meter to Apple's [HomeKit](http://www.apple.com/ios/home/), using the end-consumer (P1) interface of the [Dutch Smart Meter Requirements (DMSR)](https://www.netbeheernederland.nl/_upload/Files/Slimme_meter_15_a727fce1f1.pdf).
+
+Note that this plugin is still under construction.
 
 ### Prerequisites
 To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).  I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
@@ -31,7 +32,7 @@ The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.j
   ```json
   "platforms": [
     {
-      "platform": "p1"
+      "platform": "P1"
     }
   ]
   ```
