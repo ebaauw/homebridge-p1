@@ -27,7 +27,7 @@ The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.j
 - On macOS, make sure `/usr/local/bin` is in your `$PATH`, as `node`, `npm`, and, later, `homebridge` install there.  On a Raspberry Pi, these install to `/usr/bin`;
 - You might want to update `npm` through `sudo npm -g update npm@latest`;
 - Install homebridge through `sudo npm -g install homebridge --unsafe-perm`.  Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
-- Install the homebridge-hue plugin through `sudo npm -g install homebridge-hue`;
+- Install the homebridge-p1 plugin through `sudo npm -g install homebridge-p1 --unsafe-perm`;
 - Edit `~/.homebridge/config.json` and add the `P1` platform provided by homebridge-p1:
   ```json
   "platforms": [
