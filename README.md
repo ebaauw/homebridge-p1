@@ -2,16 +2,16 @@
 [![npm](https://img.shields.io/npm/dt/homebridge-p1.svg)](https://www.npmjs.com/package/homebridge-p1) [![npm](https://img.shields.io/npm/v/homebridge-p1.svg)](https://www.npmjs.com/package/homebridge-p1)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Homebridge plugin for DSMR end-consumer (P1) interface.
+## Homebridge plugin for DSMR end-consumer (P1) interface
 Copyright © 2018 Erik Baauw. All rights reserved.
 
-This experimental [homebridge](https://github.com/nfarina/homebridge) plugin exposes a smart meter to Apple's [HomeKit](http://www.apple.com/ios/home/), using the end-consumer (P1) interface of the [Dutch Smart Meter Requirements (DMSR)](https://www.netbeheernederland.nl/_upload/Files/Slimme_meter_15_a727fce1f1.pdf).
+This [homebridge](https://github.com/nfarina/homebridge) plugin exposes a smart meter to Apple's [HomeKit](http://www.apple.com/ios/home/), using the end-consumer (P1) interface of the [Dutch Smart Meter Requirements (DMSR)](https://www.netbeheernederland.nl/_upload/Files/Slimme_meter_15_a727fce1f1.pdf).  It provides insight from HomeKit into your actual and historic energy consumption.
 
-Note that this plugin is still under construction.
+The smart meter sends a push notification ("telegram" in DMSR speak), every second, updating the electricity consumption almost in real time.  Gas consumption is updated once every five minutes.  The homebridge-p1 plugin maintains the historic consumption.  It exposes two HomeKit accessories, one for electricity and one for gas, aptly named _Electricity_ and _Gas_.  Both accessories expose `Total Consumption` and (Current) `Consumption`, just like an Elgato Eve Energy, enabling Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app to display the consumption history.  Eve computes the `Total Cost` and `Projected Cost`.
 
 ### Prerequisites
 To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).  I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
-Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  To use the full features of homebridge-hue, you might want to check out some other HomeKit apps, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
+Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  Particularly, it does not support custom HomeKit services and characteristics.  To use homebridge-p1, you need some other HomeKit app, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
 For HomeKit automation, you need to setup an Apple TV (4th generation or later) or iPad as [Home Hub](https://support.apple.com/en-us/HT207057).
 
 You need a smart meter that complies to DMSR 5.0.  The companies maintaining the electricity and natural gas networks in the Netherlands, united in [Netbeer Nederland](https://www.netbeheernederland.nl) are [replacing](https://www.onsenergie.net/slimme-meter/) existing electricity and gas meters with smart meters.  In my home, they installed a [Landys +Gyr E350 (ZCF1100)](https://www.landisgyr.eu/product/landisgyr-e350-electricity-meter-new-generation/).
@@ -36,3 +36,9 @@ The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.j
     }
   ]
   ```
+
+### Caveats
+Exposing the smart meter to HomeKit is a bit of a hack, lacking proper HomeKit support for smart meters.  Also, Eve lacks proper support for gas consumption.  The following limitations apply:
+- The Electricity consumption is the combined consumption under Normal and Low tariff.  If you have a dual-tariff contract, the cost computed by Eve will be inaccurate;
+- The Gas consumption is actually in m³, but Eve displays kWh.  If homebridge-p1 would expose different characteristics for gas consumption, Eve would display the correct units, but not the history.  To see the correct cost for Gas, you need to change the _Energy Cost_ under _Settings_ in Eve to match you Gas rate;
+- Eve doesn't take into account fixed (subscription) costs, so the cost displayed is only the variable cost.
