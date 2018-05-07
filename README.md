@@ -10,16 +10,16 @@ This [homebridge](https://github.com/nfarina/homebridge) plugin exposes a smart 
 The smart meter sends a push notification ("telegram" in DMSR speak), every second, updating the electricity consumption almost in real time.  Gas consumption is updated once every five minutes.  The homebridge-p1 plugin maintains the historic consumption.  It exposes two HomeKit accessories, one for electricity and one for gas, aptly named _Electricity_ and _Gas_.  Both accessories expose `Total Consumption` and (Current) `Consumption`, just like an Elgato Eve Energy, enabling Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app to display the consumption history.  Eve computes the `Total Cost` and `Projected Cost`.
 
 ### Prerequisites
-To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).  I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
-Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  Particularly, it does not support custom HomeKit services and characteristics.  To use homebridge-p1, you need some other HomeKit app, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
-For HomeKit automation, you need to setup an Apple TV (4th generation or later) or iPad as [Home Hub](https://support.apple.com/en-us/HT207057).
-
 You need a smart meter that complies to DMSR 5.0.  The companies maintaining the electricity and natural gas networks in the Netherlands, united in [Netbeer Nederland](https://www.netbeheernederland.nl) are [replacing](https://www.onsenergie.net/slimme-meter/) existing electricity and gas meters with smart meters.  In my home, they installed a [Landys +Gyr E350 (ZCF1100)](https://www.landisgyr.eu/product/landisgyr-e350-electricity-meter-new-generation/).
 
 You need a cable to connect the smart meter's P1 port to a USB port.  I got mine [here](https://www.sossolutions.nl/slimme-meter-kabel), but you could also make one yourself, as described [here](http://gejanssen.com/howto/Slimme-meter-uitlezen/).  The cable is quite short (~1m) but you can extend it using a regular USB extension cable (female-A to A).
 
 You need a server to run homebridge.  This can be anything running [Node.js](https://nodejs.org): from a Raspberry Pi, a NAS system, or an always-on PC running Linux, macOS, or Windows.  See the [homebridge Wiki](https://github.com/nfarina/homebridge/wiki) for details.  I run homebridge-p1 on a Raspberry Pi 3 model B.  
 I recommend using wired Ethernet to connect the server running homebridge and the AppleTV.
+
+To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).  I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
+Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  Particularly, it does not support custom HomeKit services and characteristics.  To use homebridge-p1, you need some other HomeKit app, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
+For HomeKit automation, you need to setup an Apple TV (4th generation or later) or iPad as [Home Hub](https://support.apple.com/en-us/HT207057).
 
 ### Installation
 The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.js.  I've followed these steps to set it up:
