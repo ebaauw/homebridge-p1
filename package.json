@@ -17,7 +17,6 @@
   ],
   "main": "index.js",
   "bin": {
-    "p1": "cli/p1.js",
     "serialport-list": "node_modules/serialport/bin/list.js",
     "serialport-repl": "node_modules/serialport/bin/repl.js",
     "serialport-term": "node_modules/serialport/bin/terminal.js"
