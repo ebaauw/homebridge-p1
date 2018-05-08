@@ -23,14 +23,14 @@
     "serialport-term": "node_modules/serialport/bin/terminal.js"
   },
   "engines": {
-    "homebridge": "^0.4.38",
+    "homebridge": "^0.4.42",
     "node": "^8.11.1"
   },
   "dependencies": {
-    "fakegato-history": "^0.4.3",
-    "homebridge-hue-utils": "^0.4.8",
+    "fakegato-history": "^0.5.1",
+    "homebridge-hue-utils": "^0.4.9",
     "semver": "^5.5.0",
-    "serialport": "^6.1.1"
+    "serialport": "^6.2.0"
   },
   "devDependencies": {
     "standard": "*"
