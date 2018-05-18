@@ -25,7 +25,7 @@ For HomeKit automation, you need to setup an Apple TV (4th generation or later) 
 The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.js.  I've followed these steps to set it up:
 - Install the latest v8 LTS version of Node.js.  On a Raspberry Pi, use the 8.x [Debian package](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). On other platforms, download the [8.x.x LTS](https://nodejs.org) installer.  Both installations include the `npm` package manager;
 - On macOS, make sure `/usr/local/bin` is in your `$PATH`, as `node`, `npm`, and, later, `homebridge` install there.  On a Raspberry Pi, these install to `/usr/bin`;
-- You might want to update `npm` through `sudo npm -g update npm@latest`;
+- You might want to update `npm` through `sudo npm -g install npm@latest`;
 - Install homebridge through `sudo npm -g install homebridge --unsafe-perm`.  Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
 - Install the homebridge-p1 plugin through `sudo npm -g install homebridge-p1 --unsafe-perm`;
 - Edit `~/.homebridge/config.json` and add the `P1` platform provided by homebridge-p1:

@@ -23,11 +23,11 @@
   },
   "engines": {
     "homebridge": "^0.4.42",
-    "node": "^8.11.1"
+    "node": "^8.11.2"
   },
   "dependencies": {
     "fakegato-history": "^0.5.1",
-    "homebridge-hue-utils": "^0.4.9",
+    "homebridge-hue-utils": "^0.4.11",
     "semver": "^5.5.0",
     "serialport": "^6.2.0"
   },
