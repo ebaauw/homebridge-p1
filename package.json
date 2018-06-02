@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "fakegato-history": "^0.5.1",
-    "homebridge-hue-utils": "^0.4.12",
+    "homebridge-lib": "^1.0.0",
+    "moment": "^2.22.2",
     "semver": "^5.5.0",
     "serialport": "^6.2.0"
   },
