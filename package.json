@@ -26,7 +26,7 @@
     "node": "^8.11.3"
   },
   "dependencies": {
-    "fakegato-history": "^0.5.1",
+    "fakegato-history": "^0.5.2",
     "homebridge-lib": "^1.0.5",
     "moment": "^2.22.2",
     "semver": "^5.5.0",
