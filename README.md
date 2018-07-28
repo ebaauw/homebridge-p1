@@ -37,6 +37,17 @@ The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.j
   ]
   ```
 
+### Configuration
+Homebridge-p1 should detect the USB serial cable automatically.  In case it doesn't or when you have multiple USB serial devices, you can specify the serialport in config.json:
+```json
+"platforms": [
+  {
+    "platform": "P1",
+    "serialport": "/dev/ttyUSB0"
+  }
+]
+```
+
 ### Caveats
 Exposing the smart meter to HomeKit is a bit of a hack, lacking proper HomeKit support for smart meters.  Also, Eve lacks proper support for gas consumption.  The following limitations apply:
 - The Electricity consumption is the combined consumption under Normal and Low tariff.  If you have a dual-tariff contract, the cost computed by Eve will be inaccurate;
