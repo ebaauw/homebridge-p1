@@ -23,13 +23,13 @@
   },
   "engines": {
     "homebridge": "^0.4.44",
-    "node": "^8.11.3"
+    "node": "^8.11.4"
   },
   "dependencies": {
     "fakegato-history": "^0.5.2",
-    "homebridge-lib": "^1.0.6",
+    "homebridge-lib": "^1.0.7",
     "moment": "^2.22.2",
-    "semver": "^5.5.0",
+    "semver": "^5.5.1",
     "serialport": "^6.2.2"
   },
   "devDependencies": {
