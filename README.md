@@ -10,7 +10,7 @@ This [homebridge](https://github.com/nfarina/homebridge) plugin exposes a smart 
 The smart meter sends a push notification ("telegram" in DSMR speak), every second, updating the electricity consumption almost in real time.  Gas consumption is updated once every five minutes.  The homebridge-p1 plugin maintains the historic consumption.  It exposes two HomeKit accessories, one for electricity and one for gas, aptly named _Electricity_ and _Gas_.  Both accessories expose `Total Consumption` and (Current) `Consumption`, just like an Elgato Eve Energy, enabling Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app to display the consumption history.  Eve computes the `Total Cost` and `Projected Cost`.
 
 ### Prerequisites
-You need a smart meter that complies to DSMR 5.0.  The companies maintaining the electricity and natural gas networks in the Netherlands, united in [Netbeer Nederland](https://www.netbeheernederland.nl) are [replacing](https://www.onsenergie.net/slimme-meter/) existing electricity and gas meters with smart meters.  In my home, they installed a [Landys +Gyr E350 (ZCF1100)](https://www.landisgyr.eu/product/landisgyr-e350-electricity-meter-new-generation/).
+You need a smart meter that complies to DSMR (currently DSMR 5.0 and DSMR 2.2+ are tested).  The companies maintaining the electricity and natural gas networks in the Netherlands, united in [Netbeer Nederland](https://www.netbeheernederland.nl) are [replacing](https://www.onsenergie.net/slimme-meter/) existing electricity and gas meters with smart meters.  In my home, they installed a [Landys +Gyr E350 (ZCF1100)](https://www.landisgyr.eu/product/landisgyr-e350-electricity-meter-new-generation/).
 
 You need a cable to connect the smart meter's P1 port to a USB port.  I got mine [here](https://www.sossolutions.nl/slimme-meter-kabel), but you could also make one yourself, as described [here](http://gejanssen.com/howto/Slimme-meter-uitlezen/).  The cable is quite short (~1m) but you can extend it using a regular USB extension cable (female-A to A).
 
@@ -44,6 +44,16 @@ Homebridge-p1 should detect the USB serial cable automatically.  In case it does
   {
     "platform": "P1",
     "serialport": "/dev/ttyUSB0"
+  }
+]
+```
+If homebridge-p1 doesn't receive any data and you have a meter with an older DSMR version, you might need to specify:
+```json
+"platforms": [
+  {
+    "platform": "P1",
+    "serialport": "/dev/ttyUSB0",
+    "dsmr22": true
   }
 ]
 ```
