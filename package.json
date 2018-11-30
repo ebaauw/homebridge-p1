@@ -23,14 +23,14 @@
   },
   "engines": {
     "homebridge": "^0.4.45",
-    "node": "^10.13.0"
+    "node": "^10.14.0"
   },
   "dependencies": {
-    "fakegato-history": "^0.5.2",
-    "homebridge-lib": "^2.0.0",
-    "moment": "^2.22.2",
-    "semver": "^5.6.0",
-    "serialport": "^7.0.2"
+    "fakegato-history": "~0.5.3",
+    "homebridge-lib": "~2.0.0",
+    "moment": "~2.22.2",
+    "semver": "~5.6.0",
+    "serialport": "~7.0.2"
   },
   "scripts": {
     "test": "standard && echo \"Error: no test specified\" && exit 1"
