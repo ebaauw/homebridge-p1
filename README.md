@@ -57,6 +57,7 @@ If homebridge-p1 doesn't receive any data and you have a meter with an older DSM
   }
 ]
 ```
+If homebridge-p1 receives data too late (i.e. after the homebridge server has started) no accessories will be exposed to HomeKit.  In this case, set `"timeout"` in config.json and restart homebridge.  This parameter specifies the number of seconds homebridge-p1 waits for data, before giving up and letting homebridge startup continue without any P1 accessories.  Note that accessories from other plugins will not be reachable while homebridge-p1 waits for data, so you want to set `"timeout"` as low as possible, while keeping in mind a telegram might be lost due to communication glitches.  The default of `"timeout": 5` assumes the meter sends a telegram every second.  DSMR v2.2 meters only send a telegram every 10 seconds, so when `"dsmr22": true` is set, a default `"timeout": 50` is used.
 
 ### Caveats
 Exposing the smart meter to HomeKit is a bit of a hack, lacking proper HomeKit support for smart meters.  Also, Eve lacks proper support for gas consumption.  The following limitations apply:
