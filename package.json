@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "fakegato-history": "~0.5.3",
-    "homebridge-lib": "~4.0.7",
+    "homebridge-lib": "~4.0.8",
     "moment": "~2.24.0",
     "semver": "~5.6.0",
     "serialport": "~7.1.4",
