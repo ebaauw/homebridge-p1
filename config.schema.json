@@ -1,0 +1,40 @@
+{
+  "pluginAlias": "P1",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": " Homebridge plugin for DSMR end-consumer (P1) interface",
+  "footerDisplay": "",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "Plugin name as displayed in the homebridge log.",
+        "type": "string",
+        "required": true,
+        "default": "P1"
+      },
+      "serialport": {
+        "title": "Serial Port",
+        "description": "Serial port connected to the P1 interface.  E.g. '/dev/USB0'.",
+        "type": "string"
+      },
+      "dsmr22": {
+        "title": "DSMR v2.2",
+	      "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
+        "type": "boolean"
+      }
+    }
+  },
+  "form": [
+    "name",
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "Advanced Settings",
+      "items": [
+        "serialport",
+        "dsmr22"
+      ]
+    }
+  ]
+}
