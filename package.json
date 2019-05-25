@@ -25,11 +25,11 @@
   },
   "dependencies": {
     "fakegato-history": "~0.5.3",
-    "homebridge-lib": "~4.1.1",
+    "homebridge-lib": "~4.2.3",
     "moment": "~2.24.0",
-    "semver": "~6.0.0",
-    "serialport": "~7.1.4",
-    "@serialport/list": "~1.1.4"
+    "semver": "~6.1.0",
+    "serialport": "~7.1.5",
+    "@serialport/list": "~1.1.5"
   },
   "scripts": {
     "test": "standard && echo \"Error: no test specified\" && exit 1"
