@@ -24,7 +24,7 @@
     "node": "^10.16.0"
   },
   "peerDependencies": {
-    "homebridge-lib": "~4.2.6"
+    "homebridge-lib": "~4.2.7"
   },
   "dependencies": {
     "fakegato-history": "~0.5.3",
