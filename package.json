@@ -20,12 +20,14 @@
     "serialport-list": "node_modules/@serialport/list/lib/list.js"
   },
   "engines": {
-    "homebridge": "^0.4.49",
+    "homebridge": "^0.4.50",
     "node": "^10.16.0"
+  },
+  "peerDependencies": {
+    "homebridge-lib": "~4.2.6"
   },
   "dependencies": {
     "fakegato-history": "~0.5.3",
-    "homebridge-lib": "~4.2.5",
     "moment": "~2.24.0",
     "semver": "~6.1.1",
     "serialport": "~7.1.5",
