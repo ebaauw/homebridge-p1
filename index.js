@@ -5,10 +5,8 @@
 
 'use strict'
 
-const P1PlatformModule = require('./lib/P1Platform')
-const P1Platform = P1PlatformModule.P1Platform
+const P1Platform = require('./lib/P1Platform')
 
 module.exports = function (homebridge) {
-  P1PlatformModule.setHomebridge(homebridge)
   homebridge.registerPlatform('homebridge-p1', 'P1', P1Platform)
 }
