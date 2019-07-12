@@ -24,12 +24,12 @@
     "node": "^10.16.0"
   },
   "peerDependencies": {
-    "homebridge-lib": "~4.2.8"
+    "homebridge-lib": "~4.2.9"
   },
   "dependencies": {
     "fakegato-history": "~0.5.3",
     "moment": "~2.24.0",
-    "semver": "~6.1.1",
+    "semver": "~6.2.0",
     "serialport": "~7.1.5",
     "@serialport/list": "~1.1.5"
   },
