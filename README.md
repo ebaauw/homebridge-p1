@@ -36,7 +36,7 @@ The homebridge-p1 plugin obviously needs homebridge, which, in turn needs Node.j
   Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
 - Install the homebridge-p1 plugin through:
   ```
-  $ sudo npm -g i homebridge-lib homebridge-p1 --unsafe-perm
+  $ sudo npm -g i homebridge-p1 --unsafe-perm
   ```
 - Edit `~/.homebridge/config.json` and add the `P1` platform provided by homebridge-p1:
   ```json

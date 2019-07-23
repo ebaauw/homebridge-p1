@@ -23,11 +23,9 @@
     "homebridge": "^0.4.50",
     "node": "^10.16.0"
   },
-  "peerDependencies": {
-    "homebridge-lib": "~4.3.0"
-  },
   "dependencies": {
     "fakegato-history": "~0.5.3",
+    "homebridge-lib": "~4.2.9",
     "moment": "~2.24.0",
     "semver": "~6.2.0",
     "serialport": "~7.1.5",
