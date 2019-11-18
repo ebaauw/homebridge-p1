@@ -17,6 +17,10 @@ You need a cable to connect the smart meter's P1 port to a USB port.  I got mine
 You need a server to run homebridge.  This can be anything running [Node.js](https://nodejs.org): from a Raspberry Pi, a NAS system, or an always-on PC running Linux, macOS, or Windows.  See the [homebridge Wiki](https://github.com/nfarina/homebridge/wiki) for details.  I run homebridge-p1 on a Raspberry Pi 3 model B.  
 I recommend using wired Ethernet to connect the server running homebridge and the AppleTV.
 
+The user running homebridge needs privileges to list the serial port devices and to open the serial port device for the P1 cable.
+Under Raspbian, user `pi` has these privileges by default.
+If you run homebridge under a different user, make sure it's member of the `dialout` group, and, for Buster, of the `gpio` group.
+
 To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).  I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
 Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  Particularly, it does not support custom HomeKit services and characteristics.  To use homebridge-p1, you need some other HomeKit app, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
 For HomeKit automation, you need to setup an Apple TV (4th generation or later) or iPad as [Home Hub](https://support.apple.com/en-us/HT207057).
