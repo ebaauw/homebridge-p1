@@ -25,7 +25,7 @@
     "homebridge-lib": "~4.4.10",
     "moment": "~2.24.0",
     "semver": "~7.1.1",
-    "serialport": "~8.0.5"
+    "serialport": "~8.0.6"
   },
   "scripts": {
     "prepare": "standard",
