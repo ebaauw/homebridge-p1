@@ -1,6 +1,6 @@
 {
   "name": "homebridge-p1",
-  "version": "0.2.30-3",
+  "version": "0.2.30-4",
   "description": "Homebridge plugin for DMSR end-consumer (P1) interface",
   "author": "Erik Baauw",
   "license": "Apache-2.0",
