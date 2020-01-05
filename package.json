@@ -25,10 +25,11 @@
     "homebridge-lib": "~4.4.10",
     "moment": "~2.24.0",
     "semver": "~7.1.1",
-    "serialport": "~8.0.6"
+    "serialport": "~8.0.6",
+    "ws": "7.2.1"
   },
   "scripts": {
-    "prepare": "standard",
+    "prepare": "standard && rm -rf out && jsdoc -c jsdoc.json",
     "test": "standard && echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
