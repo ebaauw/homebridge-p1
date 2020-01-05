@@ -20,7 +20,7 @@ function errorToString (error) {
 }
 
 async function main () {
-  const p1 = new P1WsClient({ host: 'mbpr' })
+  const p1 = new P1WsClient({ host: 'pi2' })
   p1.on('error', (error) => {
     console.error('error: %s', errorToString(error))
   })
@@ -31,7 +31,6 @@ async function main () {
   p1.connect('telegram')
   p1.connect('rawData')
   p1.connect('data')
-  p1.connect('pipo')
 }
 
 main()
