@@ -15,13 +15,19 @@
       },
       "serialport": {
         "title": "Serial Port",
-        "description": "Serial port connected to the P1 interface.  E.g. '/dev/USB0'.",
+        "description": "Serial port connected to the P1 interface.  E.g. '/dev/ttyUSB0'.",
         "type": "string"
       },
       "dsmr22": {
         "title": "DSMR v2.2",
 	      "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
         "type": "boolean"
+      },
+      "wsport": {
+        "title": "Web Socket Server Port",
+        "description": "Port for the web socket server to relay P1 telegrams.  Default: none.",
+        "type": "integer",
+        "maximum": 65535
       }
     }
   },
@@ -33,7 +39,8 @@
       "title": "Advanced Settings",
       "items": [
         "serialport",
-        "dsmr22"
+        "dsmr22",
+        "wsport"
       ]
     }
   ]
