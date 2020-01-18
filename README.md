@@ -1,7 +1,9 @@
 # homebridge-p1
-[![npm](https://img.shields.io/npm/dt/homebridge-p1.svg)](https://www.npmjs.com/package/homebridge-p1) [![npm](https://img.shields.io/npm/v/homebridge-p1.svg)](https://www.npmjs.com/package/homebridge-p1)
+[![npm](https://img.shields.io/npm/dt/homebridge-p1.svg)](https://www.npmjs.com/package/homebridge-p1)
+[![npm](https://img.shields.io/npm/v/homebridge-p1.svg)](https://www.npmjs.com/package/homebridge-p1)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
+[![GitHub issues](https://img.shields.io/github/issues/ebaauw/homebridge-p1)](https://github.com/ebaauw/homebridge-p1/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ebaauw/homebridge-p1)](https://github.com/ebaauw/homebridge-p1/pulls)
 ## Homebridge plugin for DSMR end-consumer (P1) interface
 Copyright © 2018-2020 Erik Baauw. All rights reserved.
 
