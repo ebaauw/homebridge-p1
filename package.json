@@ -24,8 +24,8 @@
     "fakegato-history": "~0.5.6",
     "homebridge-lib": "~4.4.11",
     "moment": "~2.24.0",
-    "semver": "~7.1.1",
-    "serialport": "~8.0.6",
+    "semver": "~7.1.2",
+    "serialport": "~8.0.7",
     "ws": "~7.2.1"
   },
   "scripts": {
