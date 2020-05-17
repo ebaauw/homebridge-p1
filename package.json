@@ -17,12 +17,12 @@
   ],
   "main": "index.js",
   "engines": {
-    "homebridge": "~1.0.4",
+    "homebridge": "^1.0.4",
     "node": "^12.16.3"
   },
   "dependencies": {
     "fakegato-history": "~0.5.6",
-    "homebridge-lib": "~4.7.3",
+    "homebridge-lib": "~4.7.5",
     "moment": "~2.25.3",
     "semver": "~7.3.2",
     "serialport": "~9.0.0",
