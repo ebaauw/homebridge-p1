@@ -18,12 +18,11 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^1.1.0",
-    "node": "^12.17.0"
+    "node": "^12.18.0"
   },
   "dependencies": {
     "fakegato-history": "~0.5.6",
-    "homebridge-lib": "^4.7.7",
-    "moment": "^2.26.0",
+    "homebridge-lib": "^4.7.8",
     "semver": "^7.3.2",
     "serialport": "^9.0.0",
     "ws": "^7.3.0"
