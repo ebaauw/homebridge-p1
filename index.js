@@ -6,7 +6,8 @@
 'use strict'
 
 const P1Platform = require('./lib/P1Platform')
+const packageJson = require('./package.json')
 
 module.exports = function (homebridge) {
-  homebridge.registerPlatform('homebridge-p1', 'P1', P1Platform)
+  P1Platform.loadPlatform(homebridge, packageJson, 'P1', P1Platform)
 }
