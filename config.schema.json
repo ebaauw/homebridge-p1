@@ -13,7 +13,7 @@
         "required": true,
         "default": "P1"
       },
-      "serialport": {
+      "serialPort": {
         "title": "Serial Port",
         "description": "Serial port connected to the P1 interface.  E.g. '/dev/ttyUSB0'.",
         "type": "string"
@@ -23,11 +23,18 @@
 	      "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
         "type": "boolean"
       },
-      "wsport": {
+      "wsPort": {
         "title": "Web Socket Server Port",
         "description": "Port for the web socket server to relay P1 telegrams.  Default: none.",
         "type": "integer",
         "maximum": 65535
+      },
+      "timeout": {
+        "title": "Timeout",
+        "description": "Timeout in seconds.  Default: 5.",
+        "type": "integer",
+        "minimum": 5,
+        "maximum": 120
       }
     }
   },
@@ -38,9 +45,10 @@
       "expandable": true,
       "title": "Advanced Settings",
       "items": [
-        "serialport",
+        "serialPort",
         "dsmr22",
-        "wsport"
+        "wsPort",
+        "timeout"
       ]
     }
   ]
