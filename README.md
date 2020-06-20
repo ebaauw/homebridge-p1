@@ -20,14 +20,23 @@ This [Homebridge](https://github.com/homebridge/homebridge) plugin exposes a sma
 It provides insight from HomeKit into your actual and historic energy consumption.
 
 The smart meter sends a push notification ("telegram" in DSMR speak), every second, updating the electricity consumption almost in real time.
+Older versions of DSMR might send notifications less frequently.
 Gas consumption is updated once every five minutes.
 Homebridge P1 maintains the historic consumption.
-It exposes two HomeKit accessories, one for electricity and one for gas, aptly named _Electricity_ and _Gas_.
-Both accessories expose `Total Consumption` and (Current) `Consumption`, just like an Eve Energy, enabling the [Eve](https://www.evehome.com/en/eve-app) app to display the consumption history.
+
+Depending on the smart meter capabilities, Homebridge P1 exposes up to three
+HomeKit accessories:
+- _Electricity_ for electricity consumed;
+- _Electricity Delivered_ for electricity delivered back to the network (if you have solar panels);
+- _Gas_ for natural gas consumed (if a smart gas meter has been linked to the smart electricity meter);
+
+Each accessory exposes a service with `Total Consumption`, just like an Eve Energy, enabling the [Eve](https://www.evehome.com/en/eve-app) app to display the consumption history.
 Eve computes the `Total Cost` and `Projected Cost`.
 
+In case of 3-phase electricity, the accessory contains a service per phase showing _Power_, _Current_, and _Voltage_.
+
 ### Prerequisites
-You need a smart meter that complies to DSMR (currently DSMR 5.0 and DSMR 2.2+ are tested).
+You need a smart meter that complies to DSMR (currently DSMR 5.0, DSMR 4.2, and DSMR 2.2+ are tested).
 The companies maintaining the electricity and natural gas networks in the Netherlands, united in [Netbeer Nederland](https://www.netbeheernederland.nl) are [replacing](https://www.onsenergie.net/slimme-meter/) existing electricity and gas meters with smart meters.
 In my home, they installed a [Landys +Gyr E350 (ZCF1100)](https://www.landisgyr.eu/product/landisgyr-e350-electricity-meter-new-generation/).
 
@@ -51,7 +60,7 @@ If you run Homebridge under a different user, make sure it's member of the `dial
 To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).
 I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
 Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.
-To use the full features of Homebridge Zp, you might want to check out some other HomeKit apps, like the [Eve](https://www.evehome.com/en/eve-app) app (free) or Matthias Hochgatterer's [Home+](https://hochgatterer.me/home/) app (paid).  
+To use Homebridge P1, you want to check out some other HomeKit apps, like the [Eve](https://www.evehome.com/en/eve-app) app (free) or Matthias Hochgatterer's [Home+](https://hochgatterer.me/home/) app (paid).  
 
 As HomeKit uses Bonjour to discover Homebridge, the server running Homebridge must be on the same subnet as your iDevices running HomeKit.
 For remote access and for HomeKit automations, you need to setup an Apple TV (4th generation or later), HomePod, or iPad as [home hub](https://support.apple.com/en-us/HT207057).
@@ -63,7 +72,7 @@ To install Homebridge P1:
   ```
   $ sudo npm -g i homebridge-p1 --unsafe-perm
   ```
-- Edit `config.json` and add the `P1` platform provided by Homebridge ZP, see [**Configuration**](#configuration).
+- Edit `config.json` and add the `P1` platform provided by Homebridge P1, see [**Configuration**](#configuration).
 
 ### Configuration
 Homebridge P1 should detect the USB serial cable automatically.
