@@ -3,26 +3,15 @@
 //
 // Homebridge plugin for DSMR end-consumer (P1) interface.
 
+const homebridgeLib = require('homebridge-lib')
 const P1WsClient = require('../lib/P1WsClient')
 
-const stackTraceErrors = [
-  'AssertionError',
-  'RangeError',
-  'ReferenceError',
-  'SyntaxError',
-  'TypeError'
-]
-
-function errorToString (error) {
-  return stackTraceErrors.includes(error.constructor.name)
-    ? error.stack
-    : error.message
-}
+const formatError = homebridgeLib.OptionParser.formatError
 
 async function main () {
   const p1 = new P1WsClient({ host: 'localhost' })
   p1.on('error', (error) => {
-    console.error('error: %s', errorToString(error))
+    console.error('error: %s', formatError(error))
   })
   p1.on('connect', (url) => { console.log('connected to %s', url) })
   p1.on('disconnect', (url) => { console.log('disconnected from %s', url) })
