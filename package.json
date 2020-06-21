@@ -21,7 +21,7 @@
     "node": "^12.18.1"
   },
   "dependencies": {
-    "homebridge-lib": "^4.7.10",
+    "homebridge-lib": "^4.7.11",
     "serialport": "^9.0.0",
     "ws": "^7.3.0"
   },
