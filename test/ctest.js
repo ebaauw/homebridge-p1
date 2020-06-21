@@ -20,7 +20,7 @@ function errorToString (error) {
 }
 
 async function main () {
-  const p1 = new P1WsClient({ host: 'pi2' })
+  const p1 = new P1WsClient({ host: 'localhost' })
   p1.on('error', (error) => {
     console.error('error: %s', errorToString(error))
   })
