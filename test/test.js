@@ -5,36 +5,25 @@
 
 'use strict'
 
+const homebridgeLib = require('homebridge-lib')
 const P1Client = require('../lib/P1Client')
 const P1WsServer = require('../lib/P1WsServer')
 const telegrams = require('../lib/telegrams')
 
 let p1
 
-const stackTraceErrors = [
-  'AssertionError',
-  'RangeError',
-  'ReferenceError',
-  'SyntaxError',
-  'TypeError'
-]
-
-function errorToString (error) {
-  return stackTraceErrors.includes(error.constructor.name)
-    ? error.stack
-    : error.message
-}
+const formatError = homebridgeLib.OptionParser.formatError
 
 async function connect () {
   try {
-    const port = await p1.open()
-    console.log('connected to %s', port)
-    setTimeout(() => { p1.parseData(telegrams.v50) }, 2000)
-    setTimeout(() => { p1.parseData(telegrams.v50L3) }, 4000)
-    setTimeout(() => { p1.parseData(telegrams.v42) }, 6000)
-    setTimeout(() => { p1.parseData(telegrams.v22) }, 8000)
+    // const port = await p1.open()
+    // console.log('connected to %s', port)
+    setInterval(() => { p1.parseTelegram(telegrams.v50) }, 2000)
+    // setTimeout(() => { p1.parseTelegram(telegrams.v50L3) }, 4000)
+    // setTimeout(() => { p1.parseTelegram(telegrams.v42) }, 6000)
+    // setTimeout(() => { p1.parseTelegram(telegrams.v22) }, 8000)
   } catch (error) {
-    console.error(error.message)
+    console.error(formatError(error))
     setTimeout(async () => {
       await connect()
     }, 10000)
@@ -45,7 +34,7 @@ async function main () {
   p1 = new P1Client()
   // p1.on('ports', (ports) => { console.log('found ports %j', ports) })
   p1.on('error', (error) => {
-    console.error('error: %s', errorToString(error))
+    console.error(formatError(error))
   })
   // p1.on('telegram', (telegram) => { console.log('telegram: %s', telegram) })
   // p1.on('rawdata', (data) => { console.log('rawdata:', data) })
