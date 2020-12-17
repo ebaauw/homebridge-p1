@@ -35,6 +35,11 @@
         "type": "integer",
         "minimum": 5,
         "maximum": 120
+      },
+      "button": {
+        "title": "Expose Button",
+        "description": "Expose a dummy <i>Stateless Programmable Switch</i> service, so Home recognises the accessory.",
+        "type": "boolean"
       }
     }
   },
@@ -48,7 +53,8 @@
         "serialPort",
         "dsmr22",
         "wsPort",
-        "timeout"
+        "timeout",
+        "button"
       ]
     }
   ]
