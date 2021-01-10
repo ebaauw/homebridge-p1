@@ -1,5 +1,5 @@
 // homebridge-p1/test/ctest.js
-// Copyright © 2020 Erik Baauw. All rights reserved.
+// Copyright © 2020-2021 Erik Baauw. All rights reserved.
 //
 // Homebridge plugin for DSMR end-consumer (P1) interface.
 
