@@ -18,10 +18,11 @@ async function connect () {
   try {
     // const port = await p1.open()
     // console.log('connected to %s', port)
-    setInterval(() => { p1.parseTelegram(telegrams.v50) }, 2000)
-    // setTimeout(() => { p1.parseTelegram(telegrams.v50L3) }, 4000)
-    // setTimeout(() => { p1.parseTelegram(telegrams.v42) }, 6000)
-    // setTimeout(() => { p1.parseTelegram(telegrams.v22) }, 8000)
+    setTimeout(() => { p1.parseTelegram(telegrams.v50) }, 1000)
+    // setTimeout(() => { p1.parseTelegram(telegrams.be) }, 2000)
+    // setTimeout(() => { p1.parseTelegram(telegrams.v50l3) }, 3000)
+    // setTimeout(() => { p1.parseTelegram(telegrams.v42) }, 4000)
+    // setTimeout(() => { p1.parseTelegram(telegrams.v22) }, 5000)
   } catch (error) {
     console.error(formatError(error))
     setTimeout(async () => {
@@ -36,9 +37,9 @@ async function main () {
   p1.on('error', (error) => {
     console.error(formatError(error))
   })
-  // p1.on('telegram', (telegram) => { console.log('telegram: %s', telegram) })
-  // p1.on('rawdata', (data) => { console.log('rawdata:', data) })
-  // p1.on('data', (data) => { console.log('data:', data) })
+  p1.on('telegram', (telegram) => { console.log('telegram: %s', telegram) })
+  p1.on('rawData', (data) => { console.log('rawdata:', data) })
+  p1.on('data', (data) => { console.log('data:', data) })
   p1.on('warning', (message) => { console.log('warning: %s', message) })
   p1.on('close', () => {
     console.log('connection closed')
