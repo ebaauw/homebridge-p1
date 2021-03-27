@@ -38,9 +38,12 @@ Eve computes the `Total Cost` and `Projected Cost`.
 In case of 3-phase electricity, the accessory contains a service per phase showing _Power_, _Current_, and _Voltage_.
 
 ### Prerequisites
-You need a smart meter that complies to DSMR (currently DSMR 5.0, DSMR 4.2, and DSMR 2.2+ are tested).
+You need a smart meter that provides a P1 port that complies to DSMR (currently DSMR 5.0, DSMR 4.2, and DSMR 2.2+ are tested).<br>
 The companies maintaining the electricity and natural gas networks in the Netherlands, united in [Netbeer Nederland](https://www.netbeheernederland.nl) are [replacing](https://www.onsenergie.net/slimme-meter/) existing electricity and gas meters with smart meters.
-In my home, they installed a [Landys +Gyr E350 (ZCF1100)](https://www.landisgyr.eu/product/landisgyr-e350-electricity-meter-new-generation/).
+In my home, they installed a [Landys +Gyr E350 (ZCF1100)](https://www.landisgyr.eu/product/landisgyr-e350-electricity-meter-new-generation/).<br>
+Smart meters in Flandres (Belgium), Luxembourg, and [Sweden](https://hanporten.se/svenska/protokollet/) might provide a P1 port as well.
+I don't know about the rollout plans in those countries.
+One Flandres installation is reported working, see [#47](https://github.com/ebaauw/homebridge-p1/issues/47); one Swedish installation is reported not working, see [#50](https://github.com/ebaauw/homebridge-p1/issues/50).
 
 You need a cable to connect the smart meter's P1 port to a USB port.
 I got mine [here](https://www.sossolutions.nl/slimme-meter-kabel), but you could also make one yourself, as described [here](http://gejanssen.com/howto/Slimme-meter-uitlezen/).
