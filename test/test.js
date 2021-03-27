@@ -19,10 +19,10 @@ async function connect () {
     // const port = await p1.open()
     // console.log('connected to %s', port)
     setTimeout(() => { p1.parseTelegram(telegrams.v50) }, 1000)
-    // setTimeout(() => { p1.parseTelegram(telegrams.be) }, 2000)
-    // setTimeout(() => { p1.parseTelegram(telegrams.v50l3) }, 3000)
-    // setTimeout(() => { p1.parseTelegram(telegrams.v42) }, 4000)
-    // setTimeout(() => { p1.parseTelegram(telegrams.v22) }, 5000)
+    setTimeout(() => { p1.parseTelegram(telegrams.v50be) }, 2000)
+    setTimeout(() => { p1.parseTelegram(telegrams.v50l3) }, 3000)
+    setTimeout(() => { p1.parseTelegram(telegrams.v42) }, 4000)
+    setTimeout(() => { p1.parseTelegram(telegrams.v22) }, 5000)
   } catch (error) {
     console.error(formatError(error))
     setTimeout(async () => {
