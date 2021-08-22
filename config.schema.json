@@ -7,27 +7,31 @@
   "schema": {
     "type": "object",
     "properties": {
+      "dsmr22": {
+        "title": "DSMR v2.2",
+	      "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
+        "type": "boolean"
+      },
+      "host": {
+        "title": "Host",
+        "description": "Hostname and port of relay server to use instead of serial port connection.  Default: none.",
+        "type": "string"
+      },
       "name": {
         "description": "Plugin name as displayed in the homebridge log.",
         "type": "string",
         "required": true,
         "default": "P1"
       },
+      "outlet": {
+        "title": "Outlet",
+        "description": "Use <i>Outlet</i> services to expose the smart meters.",
+        "type": "boolean"
+      },
       "serialPort": {
         "title": "Serial Port",
         "description": "Serial port connected to the P1 interface.  E.g. '/dev/ttyUSB0'.",
         "type": "string"
-      },
-      "dsmr22": {
-        "title": "DSMR v2.2",
-	      "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
-        "type": "boolean"
-      },
-      "wsPort": {
-        "title": "Web Socket Server Port",
-        "description": "Port for the web socket server to relay P1 telegrams.  Default: none.",
-        "type": "integer",
-        "maximum": 65535
       },
       "timeout": {
         "title": "Timeout",
@@ -35,20 +39,37 @@
         "type": "integer",
         "minimum": 5,
         "maximum": 120
+      },
+      "wsPort": {
+        "title": "Web Socket Server Port",
+        "description": "Port for the web socket server to relay P1 telegrams.  Default: none.",
+        "type": "integer",
+        "maximum": 65535
       }
     }
   },
   "form": [
     "name",
+    "outlet",
     {
       "type": "fieldset",
       "expandable": true,
       "title": "Advanced Settings",
+      "description": "Don't change these, unless you understand what you're doing.",
       "items": [
         "serialPort",
         "dsmr22",
-        "wsPort",
         "timeout"
+      ]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "Relay Settings",
+      "description": "Don't change these, unless you understand what you're doing.",
+      "items": [
+        "wsPort",
+        "host"
       ]
     }
   ]
