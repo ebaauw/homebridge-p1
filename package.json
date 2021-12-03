@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "homebridge-lib": "~5.1.20",
-    "serialport": "^9.2.7",
+    "serialport": "^9.2.8",
     "ws": "^8.3.0"
   },
   "scripts": {
