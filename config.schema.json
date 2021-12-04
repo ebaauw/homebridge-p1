@@ -9,7 +9,7 @@
     "properties": {
       "dsmr22": {
         "title": "DSMR v2.2",
-	      "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
+        "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
         "type": "boolean"
       },
       "host": {
