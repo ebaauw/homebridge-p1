@@ -2,7 +2,7 @@
   "pluginAlias": "P1",
   "pluginType": "platform",
   "singular": true,
-  "headerDisplay": " Homebridge plugin for DSMR end-consumer (P1) interface",
+  "headerDisplay": "Homebridge plugin for DSMR end-consumer (P1) interface",
   "footerDisplay": "",
   "schema": {
     "type": "object",
