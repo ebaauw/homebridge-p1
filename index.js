@@ -1,5 +1,5 @@
 // homebridge-p1/index.js
-// Copyright © 2018-2021 Erik Baauw. All rights reserved.
+// Copyright © 2018-2022 Erik Baauw. All rights reserved.
 //
 // Homebridge plugin for DSMR end-consumer (P1) interface.
 
