@@ -38,8 +38,8 @@ async function main () {
     console.error(formatError(error))
   })
   p1.on('telegram', (telegram) => { console.log('telegram: %s', telegram) })
-  p1.on('rawData', (data) => { console.log('rawdata:', data) })
-  p1.on('data', (data) => { console.log('data:', data) })
+  p1.on('rawData', (data) => { console.log('rawdata: %j', data) })
+  p1.on('data', (data) => { console.log('data: %j', data) })
   p1.on('warning', (message) => { console.log('warning: %s', message) })
   p1.on('close', () => {
     console.log('connection closed')
