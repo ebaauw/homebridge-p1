@@ -19,12 +19,12 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^1.5.0",
-    "node": "^16.16.0"
+    "node": "^16.17.0"
   },
   "dependencies": {
-    "homebridge-lib": "~5.6.2",
+    "homebridge-lib": "~5.6.5",
     "serialport": "^10.4.0",
-    "ws": "^8.8.0"
+    "ws": "^8.8.1"
   },
   "scripts": {
     "prepare": "standard && rm -rf out && jsdoc -c jsdoc.json",
