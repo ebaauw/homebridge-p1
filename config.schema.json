@@ -23,11 +23,6 @@
         "required": true,
         "default": "P1"
       },
-      "outlet": {
-        "title": "Outlet",
-        "description": "Use <i>Outlet</i> services to expose the smart meters.",
-        "type": "boolean"
-      },
       "serialPort": {
         "title": "Serial Port",
         "description": "Serial port connected to the P1 interface.  E.g. '/dev/ttyUSB0'.",
