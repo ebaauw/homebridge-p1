@@ -24,7 +24,7 @@
   "dependencies": {
     "homebridge-lib": "~6.3.12",
     "serialport": "^10.5.0",
-    "ws": "^8.12.1"
+    "ws": "^8.13.0"
   },
   "scripts": {
     "prepare": "standard && rm -rf out && jsdoc -c jsdoc.json",
