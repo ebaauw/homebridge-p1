@@ -18,12 +18,12 @@
   ],
   "main": "index.js",
   "engines": {
-    "homebridge": "^1.6.0",
+    "homebridge": "^1.6.1",
     "node": "^18.16.0"
   },
   "dependencies": {
-    "homebridge-lib": "~6.3.14",
-    "serialport": "^10.5.0",
+    "homebridge-lib": "~6.3.17",
+    "serialport": "^11.0.0",
     "ws": "^8.13.0"
   },
   "scripts": {
