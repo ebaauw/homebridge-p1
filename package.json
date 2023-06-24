@@ -19,10 +19,10 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^1.6.1",
-    "node": "^18.16.0"
+    "node": "^18.16.1"
   },
   "dependencies": {
-    "homebridge-lib": "~6.3.17",
+    "homebridge-lib": "~6.3.18",
     "serialport": "^11.0.0",
     "ws": "^8.13.0"
   },
