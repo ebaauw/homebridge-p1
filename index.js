@@ -3,11 +3,15 @@
 //
 // Homebridge plugin for DSMR end-consumer (P1) interface.
 
-'use strict'
+import { createRequire } from 'node:module'
 
-const P1Platform = require('./lib/P1Platform')
+import { P1Platform } from './lib/P1Platform.js'
+
+const require = createRequire(import.meta.url)
 const packageJson = require('./package.json')
 
-module.exports = function (homebridge) {
+function main (homebridge) {
   P1Platform.loadPlatform(homebridge, packageJson, 'P1', P1Platform)
 }
+
+export { main as default }

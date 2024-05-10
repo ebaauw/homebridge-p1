@@ -3,12 +3,12 @@
 //
 // Homebridge plugin for DSMR end-consumer (P1) interface.
 
-'use strict'
+import { formatError, timeout } from 'homebridge-lib'
+import { JsonFormatter } from 'homebridge-lib/JsonFormatter'
 
-const { JsonFormatter, formatError, timeout } = require('homebridge-lib')
-const P1Client = require('../lib/P1Client')
-// const P1WsServer = require('../lib/P1WsServer')
-const telegrams = require('../lib/telegrams')
+import { P1Client } from '../lib/P1Client.js'
+// import { P1WsServer } from '../lib/P1WsServer.js'
+import * as telegrams from '../lib/telegrams.js'
 
 let p1
 
@@ -36,7 +36,7 @@ async function connect () {
 async function main () {
   p1 = new P1Client()
   const formatter = new JsonFormatter()
-  // p1.on('ports', (ports) => { console.log('found ports %j', ports) })
+  p1.on('ports', (ports) => { console.log('found ports %j', ports) })
   p1.on('error', (error) => { console.error(formatError(error)) })
   p1.on('telegram', (telegram) => { console.log('telegram: %s', telegram) })
   p1.on('rawData', (data) => { console.log('rawdata: %s', formatter.stringify(data)) })

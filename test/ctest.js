@@ -3,16 +3,13 @@
 //
 // Homebridge plugin for DSMR end-consumer (P1) interface.
 
-const homebridgeLib = require('homebridge-lib')
-const P1WsClient = require('../lib/P1WsClient')
+import { formatError } from 'homebridge-lib'
 
-const formatError = homebridgeLib.OptionParser.formatError
+import { P1WsClient } from '../lib/P1WsClient.js'
 
 async function main () {
   const p1 = new P1WsClient({ host: 'localhost' })
-  p1.on('error', (error) => {
-    console.error('error: %s', formatError(error))
-  })
+  p1.on('error', (error) => { console.error('error: %s', formatError(error)) })
   p1.on('connect', (url) => { console.log('connected to %s', url) })
   p1.on('disconnect', (url) => { console.log('disconnected from %s', url) })
   p1.on('telegram', (telegram) => { console.log('telegram: %s', telegram) })
