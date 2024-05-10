@@ -16,15 +16,16 @@
     "slimmemeter",
     "slimme-meter"
   ],
+  "type": "module",
   "main": "index.js",
   "engines": {
-    "homebridge": "^1.7.0",
+    "homebridge": "^1.8.1",
     "node": "^20||^18"
   },
   "dependencies": {
-    "homebridge-lib": "~6.7.5",
+    "homebridge-lib": "~7.0.1",
     "serialport": "^12.0.0",
-    "ws": "^8.16.0"
+    "ws": "^8.17.0"
   },
   "scripts": {
     "prepare": "standard && rm -rf out && jsdoc -c jsdoc.json",
