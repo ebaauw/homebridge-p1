@@ -26,9 +26,9 @@
     "node": "^22||^20||^18"
   },
   "dependencies": {
-    "homebridge-lib": "~7.1.4",
+    "homebridge-lib": "~7.1.5",
     "serialport": "^13.0.0",
-    "ws": "^8.18.0"
+    "ws": "^8.18.1"
   },
   "scripts": {
     "prepare": "standard && rm -rf out && jsdoc -c jsdoc.json",
