@@ -16,7 +16,7 @@
 </span>
 
 ## Homebridge plugin for DSMR end-consumer (P1) interface
-Copyright © 2018-2025 Erik Baauw. All rights reserved.
+Copyright © 2018-2026 Erik Baauw. All rights reserved.
 
 This [Homebridge](https://github.com/homebridge/homebridge) plugin exposes a smart meter to Apple's [HomeKit](http://www.apple.com/ios/home/), using the end-consumer (P1) interface of the [Dutch Smart Meter Requirements (DSMR)](https://www.netbeheernederland.nl/_upload/Files/Slimme_meter_15_a727fce1f1.pdf).
 It provides insight from HomeKit into your actual and historic energy consumption.
