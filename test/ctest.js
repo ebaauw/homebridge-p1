@@ -8,7 +8,7 @@ import { formatError } from 'homebridge-lib'
 import { P1WsClient } from '../lib/P1WsClient.js'
 
 async function main () {
-  const p1 = new P1WsClient({ host: 'localhost' })
+  const p1 = new P1WsClient({ host: 'localhost', timeout: 15 })
   p1.on('error', (error) => { console.error('error: %s', formatError(error)) })
   p1.on('connect', (url) => { console.log('connected to %s', url) })
   p1.on('disconnect', (url) => { console.log('disconnected from %s', url) })
