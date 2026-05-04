@@ -12,11 +12,6 @@
         "description": "Connect to DSMR v2.2 smart meter.  Default: false.",
         "type": "boolean"
       },
-      "host": {
-        "title": "Host",
-        "description": "Hostname and port of relay server to use instead of serial port connection.  Default: none.",
-        "type": "string"
-      },
       "name": {
         "description": "Plugin name as displayed in the Homebridge log.",
         "type": "string",
@@ -34,12 +29,6 @@
         "type": "integer",
         "minimum": 5,
         "maximum": 120
-      },
-      "wsPort": {
-        "title": "Web Socket Server Port",
-        "description": "Port for the web socket server to relay P1 telegrams.  Default: none.",
-        "type": "integer",
-        "maximum": 65535
       }
     }
   },
@@ -55,16 +44,6 @@
         "serialPort",
         "dsmr22",
         "timeout"
-      ]
-    },
-    {
-      "type": "fieldset",
-      "expandable": true,
-      "title": "Relay Settings",
-      "description": "Don't change these, unless you understand what you're doing.",
-      "items": [
-        "wsPort",
-        "host"
       ]
     }
   ]
