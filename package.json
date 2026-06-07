@@ -22,11 +22,11 @@
   "type": "module",
   "main": "index.js",
   "engines": {
-    "homebridge": "^2.0.1",
+    "homebridge": "^2.1.0",
     "node": "^24||^22"
   },
   "dependencies": {
-    "homebridge-lib": "~8.1.0",
+    "homebridge-lib": "~8.1.1",
     "serialport": "^13.0.0"
   },
   "scripts": {
