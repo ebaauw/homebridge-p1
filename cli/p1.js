@@ -5,6 +5,8 @@
 //
 // Homebridge plugin for DSMR end-consumer (P1) interface.
 
+import { createRequire } from 'node:module'
+
 import { timeout } from 'hb-lib-tools'
 import { CommandLineParser } from 'hb-lib-tools/CommandLineParser'
 import { CommandLineTool } from 'hb-lib-tools/CommandLineTool'
@@ -13,6 +15,9 @@ import { OptionParser } from 'hb-lib-tools/OptionParser'
 
 import { P1Client } from '../lib/P1Client.js'
 // import * as telegrams from '../lib/telegrams.js'
+
+const require = createRequire(import.meta.url)
+const packageJson = require('../package.json')
 
 const { b, u } = CommandLineTool
 
@@ -112,4 +117,4 @@ class WsTool extends CommandLineTool {
   }
 }
 
-new WsTool().main()
+new WsTool(packageJson).main()
