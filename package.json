@@ -21,6 +21,9 @@
   ],
   "type": "module",
   "main": "index.js",
+  "bin": {
+    "p1": "cli/p1.js"
+  },
   "engines": {
     "homebridge": "^2.1.0",
     "node": "^24||^22"
