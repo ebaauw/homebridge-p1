@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // homebridge-p1/cli/ws.js
 // Copyright © 2020-2026 Erik Baauw. All rights reserved.
 //
@@ -32,18 +34,17 @@ Parameters:
   Print debug messages.
 
   ${b('-d')}, ${b('--daemon')}
-  Run as daemon.  Listen for mDNS up announcements instead of searching.
+  Run as daemon.
 
   ${b('-s')}, ${b('--service')}
-  Run as service.  Listen for mDNS up announcements instead of searching.
-  Do not output timestamps.
+  Run as service.  Do not output timestamps.
 
   ${b('-H')} ${u('hostname')}${b(':')}${u('port')}, ${b('--host=')}${u('hostname')}${b(':')}${u('port')}
-  Connect to the serial port over ${b('ser2net')} at ${u('hostname')}${b(':')}${u('port')},
-  instead of auto discovering the P1 USB cable.
+  Connect to the serial port over ${b('ser2net')} at ${u('hostname')}${b(':')}${u('port')}.
+  Default: connect to the auto discovered P1 USB cable.
 
   ${b('-t')} ${u('timeout')}, ${b('--timeout=')}${u('timeout')}
-  Search for ${u('timeout')} seconds instead of default ${b('15')}.`
+  Set timeout to ${u('timeout')} seconds instead of default ${b('15')}.`
 
 class WsTool extends CommandLineTool {
   constructor (pkgJson) {
