@@ -55,6 +55,6 @@
     }
   ],
   "allowScripts": {
-    "serialport@13.0.0": true
+    "@serialport/bindings-cpp@13.0.0": true
   }
 }
