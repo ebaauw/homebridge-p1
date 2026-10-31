@@ -18,6 +18,11 @@
         "required": true,
         "default": "P1"
       },
+      "host": {
+        "title": "Host",
+        "description": "Hostname or IP address of the ser2net server for the P1 interface.  E.g. 'localhost:2000'.",
+        "type": "string"
+      },
       "serialPort": {
         "title": "Serial Port",
         "description": "Serial port connected to the P1 interface.  E.g. '/dev/ttyUSB0'.",
@@ -34,7 +39,7 @@
   },
   "form": [
     "name",
-    "outlet",
+    "host",
     {
       "type": "fieldset",
       "expandable": true,
